@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>jQuery Cycle Scrubber Plugin</title>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../jquery.cycle.all.min.js"></script>
+	<script type="text/javascript" src="../jquery.cycle.scrubber.js"></script>
+	<script type="text/javascript">
+    $(document).ready(function(){
+      $("#basic").scrubber();
+      $("#scroll-horz").scrubber({ fx: 'scrollHorz', speed: 100 });
+    });
+	</script>
+	
+</head>
+
+<body>
+
+<div id="container">
+  
+  <h1>jQuery Cycle Scrubber Plugin</h1>
+  
+  <h2>Examples:</h2>
+  
+  <h3>Basic:</h3>
+  <div id="basic">
+    <img src="images/beach1.jpg" width="200" height="200" alt="Beach1" />
+    <img src="images/beach2.jpg" width="200" height="200" alt="Beach2" />
+    <img src="images/beach3.jpg" width="200" height="200" alt="Beach3" />
+    <img src="images/beach4.jpg" width="200" height="200" alt="Beach4" />
+    <img src="images/beach5.jpg" width="200" height="200" alt="Beach5" />
+    <img src="images/beach6.jpg" width="200" height="200" alt="Beach6" />
+  </div> <!-- / #basic -->
+  
+  <h3>Scroll Horizontally:</h3>
+  <div id="scroll-horz">
+    <img src="images/beach1.jpg" width="200" height="200" alt="Beach1" />
+    <img src="images/beach2.jpg" width="200" height="200" alt="Beach2" />
+    <img src="images/beach3.jpg" width="200" height="200" alt="Beach3" />
+    <img src="images/beach4.jpg" width="200" height="200" alt="Beach4" />
+    <img src="images/beach5.jpg" width="200" height="200" alt="Beach5" />
+    <img src="images/beach6.jpg" width="200" height="200" alt="Beach6" />
+  </div> <!-- / #scroll-horz -->
+  
+</div> <!-- / #container -->
+
+</body>
+</html>
