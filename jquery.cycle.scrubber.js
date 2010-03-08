@@ -17,10 +17,11 @@ $.fn.scrubber = function(options) {
         pager = $.fn.scrubber.defaults.scrubber + '-' + instance,
         opts = $.extend({ pager: '#' + pager }, $.fn.scrubber.defaults, options || {}),
         container =   $('<div></div>').addClass(opts.container)
-                                      .html(self.html()),
+                                      .html(self.html())
+                                      .css({ zIndex: 999 }),
         scrubber =    $('<div></div>').addClass(opts.scrubber)
                                       .attr('id', pager)
-                                      .css({ position: 'absolute', top: 0, left: 0, zIndex: 1000 });
+                                      .css({ display: 'block', position: 'absolute', top: 0, left: 0, zIndex: 1000 });
     
     // Empty and append new container and scrubber.
     self.empty().css('position', 'relative').append(container).append(scrubber);
@@ -65,7 +66,7 @@ $.fn.scrubber.defaults = {
     display: 'block', 
     position: 'absolute', 
     top: 0, 
-    zIndex: 500, 
+    zIndex: 1001, 
     fontSize: '1px', 
     textIndent: '-1000em', 
     outline: 'none', 
