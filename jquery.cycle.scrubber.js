@@ -28,6 +28,8 @@ $.fn.scrubber = function(options) {
     // Initialize cycle plugin.
     container.cycle(opts);
     
+    self.css({ width: container.width(), height: container.height() });
+    
     // Position cycle pagers.
     scrubber.find('a').each(function(i){
       var items = scrubber.children().length,
