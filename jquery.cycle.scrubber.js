@@ -43,6 +43,9 @@ $.fn.scrubber = function(options) {
       $(this).css(css);
     });
     
+    // Remove alt and title attributes to prevent hover tips.
+    container.find('img').removeAttr('alt').removeAttr('title');
+    
     instance++;
   });
 };
