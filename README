@@ -1,0 +1,10 @@
+jQuery Cycle Scrubber
+=====================
+
+What does this do?
+------------------
+This plugin extends jQuery Cycle and mimics iPhoto's picture scrubbing feature.
+
+Demonstration
+-------------
+http://thespiral.ca/jquery/scrubber/demo/
