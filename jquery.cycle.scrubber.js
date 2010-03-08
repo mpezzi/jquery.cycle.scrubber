@@ -12,6 +12,9 @@
 var instance = 1;
 
 $.fn.scrubber = function(options) {
+  if ( typeof $.fn.cycle == 'undefined' )
+    alert('This plugin required the jQuery Cycle Plugin.\nhttp://www.malsup.com/jquery/cycle/');
+  
   return this.each(function(){
     var self = $(this),
         pager = $.fn.scrubber.defaults.scrubber + '-' + instance,
