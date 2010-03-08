@@ -70,7 +70,9 @@ $.fn.scrubber.defaults = {
     fontSize: '1px', 
     textIndent: '-1000em', 
     outline: 'none', 
-    cursor: 'pointer'
+    cursor: 'pointer',
+    backgroundColor: '#000',
+    opacity: 0
   }
 };
   
