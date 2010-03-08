@@ -1,12 +1,13 @@
 /*
  * jQuery Cycle Scrubber Plugin by M. Pezzi
- * http://thespiral.ca/jquery/scrubber
+ * http://thespiral.ca/jquery/scrubber/demo/
  * Version: 1.0 (03/07/10)
  * Dual licensed under the MIT and GPL licences:
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
  * Requires: jQuery v1.3.2 or later
  */
+ 
 ;(function($){
 
 var instance = 1;
