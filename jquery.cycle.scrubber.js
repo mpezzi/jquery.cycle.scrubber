@@ -1,7 +1,7 @@
 /*
  * jQuery Cycle Scrubber Plugin by M. Pezzi
  * http://thespiral.ca/jquery/scrubber/demo/
- * Version: 1.0 (03/07/10)
+ * Version: 1.1 (08/08/10)
  * Dual licensed under the MIT and GPL licences:
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
