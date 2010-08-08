@@ -36,7 +36,7 @@ $.fn.scrubber = function(options) {
     self.css({ width: container.width(), height: container.height() });
     
     // Position cycle pagers.
-    scrubber.find('a').each(function(i){
+    scrubber.find('div.pager').each(function(i){
       var items = scrubber.children().length,
           width = Math.floor(container.width() / items),
           remainder = container.width() % items,
@@ -64,6 +64,9 @@ $.fn.scrubber.defaults = {
   fx: 'none',
   pagerEvent: 'mouseover',
   pauseOnPagerHover: true,
+  pagerAnchorBuilder: function(idx, slide) {
+    return '<div class="pager"></div>';
+  },
   container: 'scrubber',
   scrubber: 'scrubber-pager',
   pagerCss: { 
