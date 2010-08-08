@@ -19,11 +19,11 @@ $.fn.scrubber = function(options) {
   return this.each(function(){
     var self = $(this),
         pager = $.fn.scrubber.defaults.scrubber + '-' + instance,
-        opts = $.extend({ pager: '#' + pager }, $.fn.scrubber.defaults, options || {}),
-        container =   $('<div></div>').addClass(opts.container)
+        o = $.extend({ pager: '#' + pager }, $.fn.scrubber.defaults, options || {}),
+        container =   $('<div></div>').addClass(o.container)
                                       .html(self.html())
                                       .css({ zIndex: 999 }),
-        scrubber =    $('<div></div>').addClass(opts.scrubber)
+        scrubber =    $('<div></div>').addClass(o.scrubber)
                                       .attr('id', pager)
                                       .css({ display: 'block', position: 'absolute', top: 0, left: 0, zIndex: 1000 });
     
@@ -31,23 +31,27 @@ $.fn.scrubber = function(options) {
     self.empty().css('position', 'relative').append(container).append(scrubber);
     
     // Initialize cycle plugin.
-    container.cycle(opts);
+    container.cycle(o);
     
     self.css({ width: container.width(), height: container.height() });
     
     // Position cycle pagers.
-    scrubber.find('div.pager').each(function(i){
+    scrubber.find('a').each(function(i){
       var items = scrubber.children().length,
           width = Math.floor(container.width() / items),
           remainder = container.width() % items,
           height = container.height(),
-          css = $.extend(opts.pagerCss, { 
+          css = $.extend(o.pagerCss, { 
             left: width * i, 
             width: ( i < (items - 1) ) ? width : width + remainder, 
             height: height
           });
       
-      $(this).css(css);
+      $(this).css(css).attr('href', o.link || '#');
+    }).bind('mouseup', function(){
+      if ( o.link ) {
+        window.location = o.link;
+      }
     });
     
     // Remove alt and title attributes to prevent hover tips.
@@ -64,9 +68,7 @@ $.fn.scrubber.defaults = {
   fx: 'none',
   pagerEvent: 'mouseover',
   pauseOnPagerHover: true,
-  pagerAnchorBuilder: function(idx, slide) {
-    return '<div class="pager"></div>';
-  },
+  link: false,
   container: 'scrubber',
   scrubber: 'scrubber-pager',
   pagerCss: { 
